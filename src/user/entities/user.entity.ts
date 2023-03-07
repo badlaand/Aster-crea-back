@@ -60,21 +60,5 @@ export class User {
         default: RoleEnumType.USER,
     })
     role: RoleEnumType;
-
-    //Je relis les tables suivant leurs cardinalités et par les clés étrangéres.
-    //Méthode du "ondelete en Cascade permet de supprimer les tables associées"
-    // @OneToMany(() => Categorie, (categories) => categories.user_, {
-    //     onDelete: 'CASCADE',
-    // })
-    // categories: Categorie[];
-
-    // @OneToMany(() => Tache, (task) => task.user_, {
-    //     onDelete: 'CASCADE',
-    //     eager: true,
-    // })
-    // taches: Tache[];
-
-    // @OneToMany(() => Tag, (userTag) => userTag.userId, { onDelete: 'CASCADE' })
-    // tags: Tag[];
 }
 

@@ -14,7 +14,7 @@ export class UpdateProductDto extends PartialType(CreateProductDto) {
     picture: string;
     @IsBoolean()
     @IsNotEmpty()
-    customable: boolean;
+    customable: string;
     @IsNumber()
     @Min(5)
     price: number;

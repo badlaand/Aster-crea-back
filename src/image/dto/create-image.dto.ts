@@ -1,7 +1,7 @@
-import { IsNotEmpty } from "class-validator/types/decorator/decorators";
+import { IsNotEmpty } from "class-validator";
 
 export class CreateImageDto {
     description: string;
-    @IsNotEmpty()
+    // @IsNotEmpty()
     picture: string
 }

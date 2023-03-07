@@ -14,6 +14,7 @@ export class ProductService {
     const newProduct = await this.productRepository.create({
       ...createProductDto,
     });
+    console.log(newProduct)
     try {
       return await this.productRepository.save(newProduct)
 

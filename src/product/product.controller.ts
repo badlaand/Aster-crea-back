@@ -22,7 +22,7 @@ export class ProductController {
   @Post()
   @UseInterceptors(FileInterceptor('file'))
   create(@UploadedFile() file: Express.Multer.File,
-    @Body() body: CreateProductDto,) {
+    @Body() body: CreateProductDto,): Promise<Product> {
     const product: CreateProductDto = {
       ...body,
       picture: file.filename,
@@ -69,7 +69,7 @@ export class ProductController {
     return this.productService.update(id, productupdated)
   }
 
-  @Get(':id')
+  @Get('by/:id')
   findOne(@Param('id') id: string): Promise<Product | string> {
     return this.productService.findOne(id);
   }

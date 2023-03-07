@@ -1,5 +1,4 @@
 import { ProductsByOrder } from 'src/products-by-order/entities/products-by-order.entity';
-import { Purchase } from 'src/purchase/entities/purchase.entity';
 import { User } from 'src/user/entities/user.entity';
 import {
     Column,
@@ -42,9 +41,9 @@ export class Product {
 
     @Column({
         nullable: false,
-        type: 'boolean'
+        type: 'varchar'
     })
-    customable: boolean;
+    customable: string;
 
     @Column({
         nullable: false,
@@ -66,16 +65,6 @@ export class Product {
     @OneToMany(() => ProductsByOrder, (productsByOrder) => productsByOrder.products)
     public productsByOrder: ProductsByOrder[]
 
-    // @ManyToOne(() => Categorie, (categories) => categories.taches, {
-    //     onDelete: 'CASCADE',
-    //     eager: true,
-    // })
-    // categorie_: Categorie;
 
-    // @ManyToOne(() => Utilisateur, (user_) => user_.id, {
-    //     onDelete: 'CASCADE',
-    //     nullable: false,
-    // })
-    // user_: Utilisateur;
 }
 
